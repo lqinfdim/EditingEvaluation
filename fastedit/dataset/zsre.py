@@ -18,7 +18,7 @@ class ZsreDataset(Dataset):
     Project page: http://nlp.cs.washington.edu/zeroshot/
     """
 
-    def __init__(self, data_dir: str = "/mnt/sdc/liqi/editing/editing-data/data/zsre", size: typing.Optional[int] = None, config=None, *args, **kwargs):
+    def __init__(self, data_dir: str = "/dataset/zsre", size: typing.Optional[int] = None, config=None, *args, **kwargs):
         data_dir = Path(data_dir)
         zsre_loc = data_dir / "zsre_mend_train_10000.json"
 
