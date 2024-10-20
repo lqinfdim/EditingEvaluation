@@ -1,0 +1,7 @@
+---
+  STATS_DIR: "/cache/editing/stats"
+  KV_DIR: "/cache/editing/kvs"
+
+
+  # Remote URLs
+  REMOTE_ROOT_URL: "https://memit.baulab.info"

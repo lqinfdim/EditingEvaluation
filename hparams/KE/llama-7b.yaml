@@ -1,0 +1,59 @@
+# Model
+archive: /mnt/sdc/liqi/result/edit_benchmark_result/llama2/KE/llama-7b
+alg_name: "KE"
+device: 0
+
+model_name: "meta-llama/Llama-2-7b-hf"
+model_class: AutoModelForCausalLM
+tokenizer_class: AutoTokenizer
+tokenizer_name: "meta-llama/Llama-2-7b-hf"
+inner_params:
+- model.layers.29.mlp.up_proj
+- model.layers.29.mlp.down_proj
+- model.layers.30.mlp.up_proj
+- model.layers.30.mlp.down_proj
+- model.layers.31.mlp.up_proj
+- model.layers.31.mlp.down_proj
+
+
+# Method
+alg: KE
+lr: 1e-5
+edit_lr: 1e-2
+lr_lr: 1e-3
+lr_scale: 1.0
+seed: 42
+cedit: 0.1
+cloc: 1.0
+cbase: 1.0
+dropout: 0.0
+train_base: False
+no_grad_layers: null
+
+# Train
+batch_size: 1
+model_save_pt: 5000
+silent: False
+#max_epochs: 1
+max_iters: 100000
+log_interval: 10
+eval_log_interval: 100
+final_eval: True
+val_interval: 10
+early_stop_patience: 20000
+early_stop_key: "loss/total_edit_val"
+eval_only: True
+half: False
+debug: False
+save: False
+verbose: True
+
+val_batch_size: 5
+accumulate_bs: 10
+val_steps: 500 # only for debug
+opt: Adam
+grad_clip: 100.
+
+# Output
+
+results_dir: /mnt/sdc/liqi/result/edit_benchmark_result/llama2/KE/
